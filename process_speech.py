@@ -17,9 +17,11 @@ def live_speech_to_text():
                 audio = recognizer.listen(source)
                 try:
                     # Use Google Web Speech API to transcribe the audio
-                    #text = recognizer.recognize_google(audio)
-                    text = recognizer.recognize_sphinx(audio)
+                    # text = recognizer.recognize_google(audio)
+                    # text = recognizer.recognize_sphinx(audio)
+                    text = recognizer.recognize_vosk(audio)
                     
+
                     print(text)
                 except sr.UnknownValueError:
                     print("......")
